@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+:root {
+  --pale-blue: hsl(243, 100%, 93%);
+  --grayish-blue: hsl(229, 7%, 55%);
+  --dark-blue: hsl(228, 56%, 26%);
+  --very-dark-blue: hsl(229, 57%, 11%);
+
+  --gradient-left: hsl(6, 100%, 80%);
+  --gradient-right: hsl(335, 100%, 65%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  color: var(--pale-blue);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: url('./images/bg-mobile.svg') no-repeat center center/cover;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  gap: 1rem;
+}
+
+.header {
+  display: flex;
+  padding: 2.5rem;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: flex-start;
+  background: var(--dark-blue);
+  border-radius: 10px;
+  border-top-right-radius: 100px;
+  width: 100%;
+}
+
+.icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.icon {
+  display: flex;
+  padding: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: var(--very-dark-blue);
+}
+
+.icon img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.details {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--dark-blue);
+  width: 100%;
+  border-radius: 10px;
+  padding: 2rem 2rem 4rem;
+  gap: 1rem;
+}
+
+.text {
+  font-size: 14px;
+}
+
+.text span {
+  font-weight: 700;
+}
+
+.bar {
+  width: 100%;
+  padding: 3px;
+  border-radius: 100px;
+  background: var(--very-dark-blue);
+}
+
+.inner-bar {
+  position: relative;
+  width: 81.5%;
+  height: 16px;
+  background: linear-gradient(
+    to right,
+    var(--gradient-left),
+    var(--gradient-right)
+  );
+  border-radius: 100px;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  right: -3px;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.range {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  width: 100%;
+}
+
+.remaining {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 55%;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.remaining p {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--grayish-blue);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.remaining span {
+  color: var(--very-dark-blue);
+  font-size: 36px;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    background-color: var(--very-dark-blue);
+    background-image: url('./images/bg-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px 450px;
+  }
+
+  .container {
+    flex-direction: row;
+    align-items: flex-end;
+    width: 80%;
+  }
+
+  .header {
+    width: 30%;
+  }
+
+  .details {
+    align-items: flex-start;
+    width: 60%;
+    border-radius: 10px;
+    padding: 4rem 2rem 2rem;
+    gap: 1rem;
+  }
+
+  .remaining {
+    width: 25%;
+    position: absolute;
+    top: 0%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+  }
+
+  .remaining::after {
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 0;
+    bottom: -20px;
+    right: 0px;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+
+    border-right: 20px solid #fff;
+  }
+
+  .remaining p {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--grayish-blue);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .remaining span {
+    color: var(--very-dark-blue);
+    font-size: 36px;
+    font-weight: 700;
+  }
+}
+
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%)
+
+### Neutral
+
+- Pale Blue: hsl(243, 100%, 93%)
+- Grayish Blue: hsl(229, 7%, 55%)
+- Dark Blue: hsl(228, 56%, 26%)
+- Very Dark Blue: hsl(229, 57%, 11%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 14px
+
+### Font
+
+- Family: [Raleway](https://fonts.google.com/specimen/Raleway)
+- Weights: 400, 700 */
